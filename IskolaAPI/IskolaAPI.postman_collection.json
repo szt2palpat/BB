@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "09793e7f-b2d6-4ceb-a944-379f60b5f936",
+		"name": "IskolaAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Diákok lekérdezése",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/Diakok",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"Diakok"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Diák lekérdezése",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/Diakok/1",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"Diakok",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Létrehozás",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nev\": \"Teszt Elek\",\r\n    \"email\": \"elek@teszt.hu\",\r\n    \"erdemjegy\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/Diakok",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"Diakok"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Módosítás",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 23,\r\n    \"nev\": \"Teszt Enikő\",\r\n    \"email\": \"eniko@teszt.hu\",\r\n    \"erdemjegy\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/Diakok/23",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"Diakok",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Törlés",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/Diakok/23",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"Diakok",
+						"23"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "hostname",
+			"value": "http://localhost:5000/api"
+		}
+	]
+}
